@@ -58,7 +58,7 @@ export class GradesService {
 
   async update(uuid: string, updateGradeDto: UpdateGradeDto) {
     const calificacion = await this.gradesService.preload({
-      uuid: uuid,
+      uuid_calificacion: uuid,
       ...updateGradeDto
     })
 

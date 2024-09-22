@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 export class Grade {
 
     @PrimaryGeneratedColumn('uuid')
-    uuid: string
+    uuid_calificacion: string
 
     @Column()
     uuid_estudiante: string
