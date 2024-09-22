@@ -56,14 +56,14 @@ export class GradesService {
     return gradesByEstudiante
   }
 
-  async update(uuid: string, updateGradeDto: UpdateGradeDto) {
+  async update(updateGradeDto: UpdateGradeDto) {
     const calificacion = await this.gradesService.preload({
-      uuid_calificacion: uuid,
+      uuid_calificacion: updateGradeDto.uuid_calificacion,
       ...updateGradeDto
     })
 
     if(!calificacion)
-      throw new NotFoundException('No se ha encontrado una calificacion con este uuid')
+      throw new NotFoundException('No se ha encontrado una calificacion con este uuid_calificacion')
 
     await this.gradesService.save(calificacion)
     return calificacion

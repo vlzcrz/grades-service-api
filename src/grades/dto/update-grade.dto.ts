@@ -1,8 +1,14 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateGradeDto } from './create-grade.dto';
-import { IsDecimal, IsNumber, IsOptional, Max, Min } from 'class-validator';
+import { IsDecimal, IsNumber, IsOptional, IsString, Max, Min } from 'class-validator';
 
 export class UpdateGradeDto extends PartialType(CreateGradeDto) {
+
+    @IsString()
+    uuid_calificacion: string
+
+    @IsString()
+    uuid_estudiante: string
 
     @IsOptional()
     asignatura?: string

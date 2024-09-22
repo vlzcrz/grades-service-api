@@ -22,9 +22,9 @@ export class GradesController {
     return this.gradesService.findCalificacionEstudiante(uuid);
   }
 
-  @Patch(':uuid')
-  updateCalificacion(@Param('uuid', ParseUUIDPipe) uuid: string, @Body() updateGradeDto: UpdateGradeDto) {
-    return this.gradesService.update(uuid, updateGradeDto);
+  @Patch()
+  updateCalificacion(@Body() updateGradeDto: UpdateGradeDto) {
+    return this.gradesService.update(updateGradeDto);
   }
 
   @Delete(':id')
